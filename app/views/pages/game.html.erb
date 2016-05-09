@@ -1,0 +1,22 @@
+
+<div class="container text-center">
+  <%@start_time%>
+  <h1>Welcome to the longest word-game !</h1>
+  <hr>
+  <p>Here is your grid :</p>
+  <h1>  <%= @grid %></h1>
+  <hr>
+  <form action="/score">
+    <fieldlset class="form-group">
+      <label class="form-control-label" for="question">What's your best shot ?</label>
+      <input class="form-control" type="text" id="question" name="attempt" placeholder="Your answer">
+      <input class="form-control" type="hidden"  name="start_time"  value="<%=@start_time%>">
+       <input class="form-control" type="hidden"  name="grid"  value="<%=@grid%>">
+    </fieldlset>
+      <hr>
+    <fieldset class="form-group">
+      <input type="submit" value="Go On !" class="btn btn-primary btn-lg btn block" >
+    </fieldset>
+  </form>
+
+</div>

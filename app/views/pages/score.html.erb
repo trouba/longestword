@@ -1,0 +1,23 @@
+
+<div class="container text-center">
+  <hr>
+  <h1>Now your result</h1>
+  <div class=" ">
+    <p>Your word: <%= @attempt %></p>
+    <p>Time Taken to answer: <%= @result[:time].round(2)%></p>
+    <p>Translation: <%= @result[:translation]%></p>
+    <p>Your score: <%= @result[:score].round(2) %></p>
+    <p>Message: <%= @result[:message]%></p>
+  </div>
+  <div>
+    <%= link_to "Replay", game_path(@game) %>
+  </div>
+
+
+</div>
+
+
+
+
+
+
