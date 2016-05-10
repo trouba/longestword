@@ -11,7 +11,8 @@
   </div>
   <hr>
   <p>Number of games <%=session[:counter]%></p>
-  <p>Total score <%=session[:score]%></p>
+  <p>Total score <%=session[:score].round(2)%></p>
+  <p>Average score <%= ( session[:score] / session[:counter] ).round(2)  %></p>
   <hr>
   <div>
     <%= link_to "Replay", game_path(@game) %>
