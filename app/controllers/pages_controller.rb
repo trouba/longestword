@@ -1,12 +1,19 @@
 class PagesController < ApplicationController
   require 'open-uri'
   require 'json'
-  require 'date'
-  require 'time'
+
 
   def game
     @grid = generate_grid(9).join("")
     @start_time = Time.now
+    if session[:counter]
+      session[:counter] += 1
+    else
+      session[:counter] = 1
+    end
+
+
+
   end
 
   def score
@@ -15,6 +22,7 @@ class PagesController < ApplicationController
     @grid = params[:grid].split("")
     @start_time = Time.parse(params[:start_time])
     @result = run_game(@attempt, @grid, @start_time, @end_time)
+    session[:score] += @result[:score]
   end
 
   def generate_grid(grid_size)

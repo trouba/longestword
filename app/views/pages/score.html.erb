@@ -9,6 +9,10 @@
     <p>Your score: <%= @result[:score].round(2) %></p>
     <p>Message: <%= @result[:message]%></p>
   </div>
+  <hr>
+  <p>Number of games <%=session[:counter]%></p>
+  <p>Total score <%=session[:score]%></p>
+  <hr>
   <div>
     <%= link_to "Replay", game_path(@game) %>
   </div>
